@@ -1,4 +1,4 @@
-package fr.cesi.ril17.spring.demo.controllers;
+package fr.cesi.ril17.spring.demo.controllers.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
