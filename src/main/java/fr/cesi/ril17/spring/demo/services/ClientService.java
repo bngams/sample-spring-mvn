@@ -20,8 +20,9 @@ public class ClientService {
 		this.clientRepo = clientRepo;
 	}
 	
-	public Optional<Client> findByName(String name) {
-		return Optional.of(clientRepo.findByLastname(name).get(0));
+	public Client findByName(String name) {
+		List<Client> clients = clientRepo.findByLastname(name);
+		return (clients.isEmpty()) ?  null : clients.get(0);
 	}
 
 }

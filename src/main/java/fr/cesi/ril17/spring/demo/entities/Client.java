@@ -33,7 +33,6 @@ public class Client {
 	@Column(columnDefinition="TEXT")
 	private String bio;
 	@OneToMany(mappedBy="client")
-	@JsonBackReference
 	private List<Invoice> invoices;
 	
 }

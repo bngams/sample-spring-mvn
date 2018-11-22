@@ -26,7 +26,7 @@ public class ClientController {
 	@GetMapping("/{name}")
 	public ResponseEntity<Client> getClientByName(@PathVariable String name) {
 		return new ResponseEntity<Client>(
-				clientService.findByName(name).get(), 
+				clientService.findByName(name), 
 				HttpStatus.OK);
 		
 	}

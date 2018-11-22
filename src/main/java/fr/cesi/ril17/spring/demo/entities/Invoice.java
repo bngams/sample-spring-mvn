@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import lombok.AllArgsConstructor;
@@ -26,7 +27,7 @@ public class Invoice {
 	@NotNull
 	private Double amount;
 	@ManyToOne
-	@JsonManagedReference
+	@JsonBackReference
 	private Client client;
 	
 }
