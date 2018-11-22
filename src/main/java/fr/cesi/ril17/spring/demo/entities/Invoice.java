@@ -7,12 +7,16 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity(name="invoices")
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Invoice {
 	
 	@Id
@@ -22,6 +26,7 @@ public class Invoice {
 	@NotNull
 	private Double amount;
 	@ManyToOne
+	@JsonManagedReference
 	private Client client;
 	
 }

@@ -11,12 +11,17 @@ import javax.persistence.OneToMany;
 
 import org.hibernate.validator.constraints.Length;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity(name="clients")
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Client {
 	
 	@Id
@@ -28,6 +33,7 @@ public class Client {
 	@Column(columnDefinition="TEXT")
 	private String bio;
 	@OneToMany(mappedBy="client")
+	@JsonBackReference
 	private List<Invoice> invoices;
 	
 }
