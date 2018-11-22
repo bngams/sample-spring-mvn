@@ -28,7 +28,6 @@ public class ClientController {
 		return new ResponseEntity<Client>(
 				clientService.findByName(name), 
 				HttpStatus.OK);
-		
 	}
 	
 	
