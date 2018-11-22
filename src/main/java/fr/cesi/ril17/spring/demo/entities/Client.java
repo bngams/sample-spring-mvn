@@ -14,17 +14,17 @@ import org.hibernate.validator.constraints.Length;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-@Entity
+@Entity(name="clients")
 @Data
 @AllArgsConstructor
 public class Client {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	@Length(min = 3, max = 100)
 	private String firstname;
-	private String laststname;
+	private String lastname;
 	@Column(columnDefinition="TEXT")
 	private String bio;
 	@OneToMany(mappedBy="client")

@@ -10,13 +10,13 @@ import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-@Entity
+@Entity(name="invoices")
 @Data
 @AllArgsConstructor
 public class Invoice {
 	
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	private String title;
 	@NotNull
